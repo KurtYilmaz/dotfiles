@@ -1,0 +1,89 @@
+{
+	"name": "love-launcher",
+	"displayName": "Löve Launcher",
+	"description": "Launches your project in Löve via a shortcut",
+	"version": "1.0.5",
+	"icon": "logo.png",
+	"galleryBanner": {
+		"color": "#6CBEE4",
+		"theme": "dark"
+	},
+	"publisher": "JanW",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"Löve",
+		"love2d",
+		"launcher",
+		"game",
+		"engine"
+	],
+	"license": "MIT",
+	"activationEvents": [
+		"onCommand:lövelauncher.launch"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "lövelauncher.launch",
+				"title": "Launch Löve"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "lövelauncher.launch",
+				"key": "Alt+L"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Löve Launcher config",
+			"properties": {
+				"lövelauncher.path": {
+					"type": "string",
+					"description": "Set Path to your love executable.",
+					"default": "C:\\Program Files\\LOVE\\love.exe"
+				},
+				"lövelauncher.maxInstances": {
+					"type": "integer",
+					"description": "Set the max amount of instance you want to be able to spawn at the same time.",
+					"default": 1
+				},
+				"lövelauncher.useConsoleSubsystem": {
+					"type": "boolean",
+					"description": "Should Löve be executed with the console subsystem? (Windows only)",
+					"default": false
+				},
+				"lövelauncher.overWrite": {
+					"type": "boolean",
+					"description": "Should the launcher overwrite the first process when launching another one?",
+					"default": true
+				},
+				"lövelauncher.saveAllonLaunch": {
+					"type": "boolean",
+					"description": "Should VS Code save all opened files on Löve launch?",
+					"default": false
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^1.8.5",
+		"vscode": "^0.11.0"
+	},
+	"__metadata": {
+		"id": "2e81f30f-03a2-4fce-a412-dc0da5e861d3",
+		"publisherId": "b640f6d8-6552-4044-8245-c418e1681384",
+		"publisherDisplayName": "Jan Werder"
+	}
+}

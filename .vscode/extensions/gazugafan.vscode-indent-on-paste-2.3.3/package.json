@@ -1,0 +1,73 @@
+{
+	"name": "vscode-indent-on-paste",
+	"displayName": "Indent on Paste",
+	"description": "Re-indents pasted code to match the destination",
+	"version": "2.3.3",
+	"publisher": "gazugafan",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"bugs": {
+		"url": "https://github.com/gazugafan/vscode-indent-on-paste/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gazugafan/vscode-indent-on-paste.git"
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^1.8.5",
+		"vscode": "^0.11.0"
+	},
+	"dependencies": {
+		"clipboardy": "^1.2.3"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:editor.action.clipboardPasteAction"
+	],
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Indent on Paste",
+			"properties": {
+				"indentOnPaste.endingBlocks": {
+					"type": "array",
+					"default": [
+						"}",
+						"]",
+						">",
+						"</",
+						"<?end",
+						"<?phpend",
+						"<?else",
+						"<?phpelse"
+					],
+					"description": "Pasting into a position followed by a line starting with one of these ending blocks will cause a (likely correct) extra indentation. Whitespace is stripped out when examining lines for end blocks."
+				},
+				"indentOnPaste.pasteMethod": {
+					"type": "string",
+					"enum": [
+						"native",
+						"workaround"
+					],
+					"default": "native",
+					"description": "The method used to insert text when pasting. \"native\" uses VS Code's built-in paste method--retaining functionality such as \"editor.formatOnPaste\" and \"editor.autoIndent\". \"workaround\" completely bypasses VS Code's built-in paste method, and can be used if you experience conflicts with other pasting functionality (might also be a little faster)."
+				}
+			}
+		}
+	},
+	"main": "./out/src/extension",
+	"__metadata": {
+		"id": "b500a7ee-4423-4c8f-9e85-10682e6f7828",
+		"publisherId": "fc082ae9-840b-4b3a-933a-85fb8b1d0ca4",
+		"publisherDisplayName": "gazugafan"
+	}
+}
