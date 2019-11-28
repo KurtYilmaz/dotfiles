@@ -1,0 +1,9 @@
+INDEX VERSION 1.131+/home/kurt/.config/Code/User/workspaceStorage/9e312e4c9558cedb4d59ee9d7d43c00f/redhat.java/jdt_ws/.metadata/.plugins/org.eclipse.jdt.core
+3780152042.index
+91060986.index
+3408081233.index
+3902130637.index
+3842426239.index
+1945046481.index
+3139727542.index
+3677925651.index

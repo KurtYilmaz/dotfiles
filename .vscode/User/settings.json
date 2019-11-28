@@ -1,0 +1,29 @@
+{
+    "workbench.colorTheme": "Noctis",
+    "[html]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.zoomLevel": 1,
+    "window.titleBarStyle": "custom",
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.glyphMargin": false,
+    "vim.handleKeys": {
+        "<C-c>": false,
+        "<C-tab>": false,
+        "<C-w>": false,
+        "<C-f>": false,
+        "<C-h>": false,
+        "<C-a>": false
+    }
+}
